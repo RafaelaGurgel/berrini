@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Berrini DS Capital é uma gestora independente de fundos de ações seguindo um processo de pesquisa profissional.">
+   
+    <title>DS Capital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="novo.css">
+
+    <script> 
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.getElementById("backToTop");
+
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop > 200) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    backToTopButton.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+
+// Form Submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value
+    };
+
+    // Aqui você pode adicionar a lógica de envio
+    console.log('Dados do formulário:', formData);
+    
+    // Exemplo de feedback visual
+    alert('Obrigado por seu contato, ' + formData.firstName + '! Entraremos em contato em breve.');
+    
+    // Resetar formulário
+    this.reset();
+});
+// Adicione este script para rolagem suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+    </script>
+
+    <style>
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Phudu', sans-serif;
+}
+
+/* Variáveis de cores */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #0c4c66;
+    --accent-color: #FF6B6B;
+    --light-gray: #f9f9f9;
+    --text-color: #333;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+
+.logo {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height:40vh;
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Sections */
+.content-section {
+    padding: 4rem 2rem;
+    background: var(--light-gray);
+}
+
+.content-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+/* Columns */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.column:hover {
+    transform: translateY(-5px);
+}
+
+.uniform-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.column h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.map-placeholder {
+    height: 400px;
+    background: #ddd;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+/* Botão Voltar ao Topo */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+#backToTop:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero {
+        height: 70vh;
+    }
+}
+/* Formulário de Contato */
+.contact-form {
+    background: white !important;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.1);
+}
+
+.form-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-button:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Layout Responsivo */
+@media (min-width: 768px) {
+    .form-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+footer {
+    background-image: url("https://iili.io/2pTf8PI.png"); /* Caminho da imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir todo o espaço */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição */
+    height: 60px; /* Altura do footer */
+    color: white; /* Cor do texto para melhor visibilidade */
+    text-align: center5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+<!-- Adicione no cabeçalho -->
+<link href="https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<nav class="compact-header">
+
+<style>
+    compact-header {
+    background: var(--primary-color);
+    padding: 0.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.2rem; /* Tamanho reduzido */
+    line-height: 1.5;
+}
+    .hero-text h1 {
+        font-family: 'Phudu', sans-serif;
+        font-weight: 700;
+    }
+    
+    .hero-text p {
+        font-family: 'Phudu', sans-serif;
+        font-weight: 400;
+    }
+</style>
+
+<main>
+    <!-- ...seu código existente... -->
+</main>
+
+    </header>
+
+    <main>
+        <section class="hero">
+            <a href=" site" target="_blank"></a>
+            <img src="https://iili.io/2pxy52p.png" alt="Banner" class="hero-image" >
+            <div class="hero-text">
+                <h1>Bem-vindo à Berrini DS Capital </h1>
+                <p>Gestora de fundos de ações experiente</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Adquirimos ativos judiciais diretamente</h2>
+        
+            <div class="columns">
+                <div class="column">
+                    <img src="https://iili.io/2pn0ioF.jpg" alt="Sobre" class="uniform-image"> 
+                    <h3>SOBRE</h3>
+                    <p>Somos uma empresa especializada na aquisição de ativos judiciais, oferecendo soluções rápidas e seguras para a compra de precatórios, créditos judiciais e outros direitos de natureza jurídica.</p>
+                </div>
+                
+                <div class="column">
+                    <img src="https://iili.io/2pBZBgs.jpg" alt="Objetivo" class="uniform-image">
+                    <h3>OBJETIVO</h3>
+                    <p>Nosso propósito é converter ativos judiciais em liquidez de maneira ágil, confiável e transparente. Fale connosco e descubra como podemos ajudá-lo!</p>
+                </div>
+                
+                <div class="column">
+                    <img src="https://iili.io/2pBZq1n.jpg" alt="Foco" class="uniform-image">
+                    <h3>FOCO</h3>
+                    <p>Garantimos liquidez imediata para quem possui ativos judiciais, eliminando a espera por pagamentos governamentais ou a morosidade dos trâmites processuais.</p>
+                </div>
+            </div>
+        </section>
+
+        <<section class="content-section">
+            <h2>Nossa Localização</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.093243863085!2d-46.6943156!3d-23.593723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce574e5d15c0b5%3A0x78579157daa692d8!2sAv.%20Engenheiro%20Lu%C3%ADs%20Carlos%20Berrini%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1718736726590!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa da Localização">
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <section class="content-section contact-form">
+        <div class="form-container">
+            <h2>Fale Conosco</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="firstName">Nome *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Sobrenome *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <button type="submit" class="form-button">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contato</h4>
+               <p> Email: contato@berrinidscapital.com.br</p>
+            </div>
+           
+        </div>
+        <button id="backToTop" title="Voltar ao topo">↑</button>
+    </footer>
+
+ 
+
+    
+
+</body>
+</html>
